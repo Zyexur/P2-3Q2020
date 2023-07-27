@@ -1,0 +1,41 @@
+﻿@using Web_App.Helpers;
+<script src="~/Scripts/views/vNivelSeccion.js"></script>
+@{
+    ViewBag.Title = "vNivelSeccion";
+}
+
+@Html.Partial("_AdministradorCE")
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+        <h1 class="h2">Niveles y Secciones</h1>
+    </div>
+
+    @Html.CtrlTable(viewName: "vNivelSeccion", id: "tblNivelesSecciones", title: "Lista de Niveles y Secciones",
+    columnsTitle: "Nombre del Nivel, Nombre de la Sección", ColumnsDataName: "NombreNivel,NombreSeccion",
+    onSelectFunction: "BindFields", colorHeader: "white")
+
+    <div class="card border-secondary" style="margin-top: 50px;">
+        <div class="card-header">
+            <div class="row pull-right">
+                <div class="col-md-8">Usuario</div>
+                <div class="col-md-4">
+                    @Html.CtrlButton(viewName: "vNivelSeccion", id: "btnRegNivelSeccion", label: "Registrar", onClickFunction: "Create", buttonType: "success")
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="bs-component">
+                        <form id="frmEdition">
+                            @Html.CtrlDropDown(id: "Nivel", label: "Nombre del Nivel", listId: "LST_NIVELES", ColumnDataName: "IdNivel")
+                            @Html.CtrlDropDown(id: "Seccion", label: "Codigo de la Seccion", listId: "LST_SECCIONES", ColumnDataName: "IdSeccion")
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

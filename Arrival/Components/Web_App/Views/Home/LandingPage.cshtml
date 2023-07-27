@@ -1,0 +1,112 @@
+﻿
+@{
+    ViewBag.Title = "LandingPage";
+}
+
+<html>
+<head>
+    <link type="text/css" rel="stylesheet" href="~/Content/landing-page.css" />
+    <script src="https://kit.fontawesome.com/400c8448b9.js" crossorigin=""></script>
+</head>
+
+<body class="d-flex flex-column h-100">
+    <header class="header">
+        @Html.Partial("MenuPrincipal")
+        <div class="headerTxt">
+            <div class="main-heading">
+                <h1>Por un futuro más seguro</h1>
+            </div>
+            <div class="headingBtn">
+                <a href="https://localhost:44339/Home/Registro"><h3>Empieza hoy</h3></a>
+            </div>
+        </div>
+    </header>
+    <main class="flex-shrink-0">
+        <!-- Marketing messaging and featurettes
+    ================================================== -->
+        <!-- Wrap the rest of the page in another container to center all the content. -->
+
+        <div class="container marketing">
+
+            <!-- Three columns of text below the carousel -->
+            <div class="row about" id="about">
+                <h1 class="heading">Arrival</h1>
+                <p>
+                    Somos una aplicación que nace a partir de la necesidad de una plataforma donde tanto centros educativos como transportistas de estudiantes
+                    y padres o madres de familia convergieran con el fin de mejorar la calidad y la seguridad de los viajes para cada uno de nuestros estudiantes.
+                </p>
+            </div><!-- /.row -->
+            <!-- START THE FEATURETTES -->
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette" id="services">
+                <div class="col-md-7 order-md-2">
+                    <h2 class="featurette-heading">Administra los servicios de transporte de tu centro educativo</h2>
+                    <p class="lead">Administra de un forma mas segura y efectiva el servicio de transporte de tu centro educativo llevando un control de las rutas, la asignacion de estudiantes y la distribucion de rutas a los diferentes transportistas. Explora éstas y otras opciones registrandote.</p>
+                    <a class="btn btn-primary" href="https://localhost:44339/Home/RegistroAdminCE">Empieza ahora</a>
+                </div>
+                <div class="col-md-5 order-md-1">
+                    <img src="~/Content/imgs/work.jpg" width="500" height="500" />
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <h2 class="featurette-heading">Gestiona tus viajes de una forma más efectiva</h2>
+                    <p class="lead">Como empresa de transporte estudiantil, puedes administrar mucho mejor los viajes a realizar y llevar un mejor control de los estudiantes asignados a tus rutas. Explora éstas y otras opciones registrandote.</p>
+                    <a class="btn btn-primary" href="https://localhost:44339/Home/RegistroTransportista">Empieza ahora</a>
+                </div>
+                <div class="col-md-5">
+                    <img src="~/Content/imgs/gps.png" width="600" />
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+                <div class="col-md-5">
+                    <img src="~/Content/imgs/woman.jpg" width="500" height="500" />
+                </div>
+                <div class="col-md-7">
+                    <h2 class="featurette-heading">Lleva un mejor control del viaje de tus hijas e hijos</h2>
+                    <p class="lead">Con Arrival ahora puedes asegurarte que tu hija o hijo se encuentran en la ruta y unidad de transporte correcta asi como verificar cuando llegan al centro educativo y cuando se dirigen de vuelta a casa. Explora éstas y otras opciones registrandote.</p>
+                    <a class="btn btn-primary" href="https://localhost:44339/Home/RegistroPariente">Empieza ahora</a>
+                </div>
+            </div>
+
+            <div class="row contactForm">
+
+            </div>
+
+            <hr class="featurette-divider">
+
+            <!-- /END THE FEATURETTES -->
+        </div>
+        <p class="float-end"><a href="#">Back to top</a></p>
+        <div class="socialMedia-box">
+            <h2 class="font-weight-light">Síguenos</h2>
+            <div class="socialMedia">
+                <a href="#">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer mt-auto py-3">
+        <div class="bottomTxt">
+            <p>&copy; 2020 Arrival &middot; Diseñado por <span class="font-weight-bold">xcoding</span></p>
+        </div>
+    </footer>
+</body>
+</html>

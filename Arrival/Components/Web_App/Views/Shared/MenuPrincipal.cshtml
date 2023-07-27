@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "MenuPrincipal";
+}
+
+
+<nav class="navbar navbar-expand-md">
+    <div class="container-fluid">
+        <a href="https://localhost:44339/Home/LandingPage">
+            <img src="~/Content/imgs/logo-blue.svg" width="275" height="40">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav nav-left">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">Acerca</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#services">Servicios</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav nav-right">
+                <li class="nav-item">
+                    @Html.ActionLink("Iniciar sesión", "InicioSesion", "Home", new { @class = "nav-link" })
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Registrarse", "Registro", "Home", new { @class = "nav-link" })
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+

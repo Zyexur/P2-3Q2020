@@ -1,0 +1,72 @@
+﻿<script src="~/Scripts/views/vTransportistaPanel.js"></script>
+
+<head>
+    <title>Transportista</title>
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet">
+    <link href="~/Content/main-page-transportista.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/400c8448b9.js" crossorigin=""></script>
+</head>
+
+
+<body>
+
+    <nav class="navbar navbar-dark sticky-top flex-md-nowrap p-0">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Arrival - Transportista</a>
+        <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">@Html.ActionLink("Cerrar Sesión", "InicioSesion", "Home", new { @class = "nav-link text-white" })</li>
+        </ul>
+    </nav>
+
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+
+        <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link text-muted" href="#">Administración</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href=""><i class="fas fa-chart-pie"></i>   Dashboard</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("EmpresaTransporte", "Home")"><i class="fas fa-business-time"></i>    Empresa de transporte</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("UsuariosTransportista", "Home")"><i class="fas fa-user-friends"></i>   Usuarios</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Unidades", "Home")"><i class="fas fa-bus"></i>   Unidades de Transporte</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href=""><i class="fas fa-route"></i>   Rutas y eventos</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("CentrosEducativosTR", "Home")"><i class="fas fa-school"></i>   Centros Educativos</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-muted" href="#">Configuraciones</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("PerfilTransportista", "Home")"><i class="fas fa-user"></i>   Perfil</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("PerfilTransportista", "Home")"><i class="fas fa-clipboard"></i>   Bitacora</a>
+                </li>
+            </ul>
+
+        </div>
+
+    </nav>
+
+</body>
+
+

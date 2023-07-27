@@ -1,0 +1,51 @@
+﻿@using Web_App.Helpers;
+<script src="~/Scripts/views/vUnidad.js"></script>
+@{
+    ViewBag.Title = "vUnidad";
+}
+
+@Html.Partial("TransportistaPanel")
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+        <h1 class="h2">Unidades De Transporte</h1>
+    </div>
+
+    @Html.CtrlTable(viewName: "vUnidad", id: "tblUnidades", title: "Lista de Unidades de Transporte",
+    columnsTitle: "Placa,Modelo,Marca,Año,Tamaño,Capacidad,Color,Empresa,Ruta,Chofer", ColumnsDataName: "Placa,Modelo,Marca,Anno,Tamano,Capacidad,Color,IdEmpresa,IdRuta,IdChofer",
+    onSelectFunction: "BindFields", colorHeader: "white")
+
+    <div class="card border-secondary" style="margin-top: 50px;">
+        <div class="card-header">
+            <div class="row pull-right">
+                <div class="col-md-8">Edición de Unidad De Transporte</div>
+                <div class="col-md-4">
+                    @Html.CtrlButton(viewName: "vUnidad", id: "btnCrUnidad", label: "Registrar", onClickFunction: "Create", buttonType: "primary")
+                    @Html.CtrlButton(viewName: "vUnidad", id: "btnUpdUnidad", label: "Modificar", onClickFunction: "Update", buttonType: "success")
+                    @Html.CtrlButton(viewName: "vUnidad", id: "btnDelUnidad", label: "Eliminar", onClickFunction: "Delete", buttonType: "danger")
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="bs-component">
+                        <form id="frmEdition">
+                            @Html.CtrlInput(id: "txtPlaca", type: "text", label: "Placa", columnDataName: "Placa")
+                            @Html.CtrlInput(id: "txtModelo", type: "text", label: "Modelo", columnDataName: "Modelo")
+                            @Html.CtrlInput(id: "txtMarca", type: "text", label: "Marca", columnDataName: "Marca")
+                            @Html.CtrlInput(id: "txtAnno", type: "date", label: "Año", columnDataName: "Anno")
+                            @Html.CtrlInput(id: "txtTamanno", type: "text", label: "Tamaño", columnDataName: "Tamano")
+                            @Html.CtrlInput(id: "txtCapacidad", type: "number", label: "Capacidad", columnDataName: "Capacidad")
+                            @Html.CtrlInput(id: "txtColor", type: "text", label: "Color", columnDataName: "Color")
+                            @Html.CtrlInput(id: "txtIdEmpresa", type: "text", label: "Empresa", columnDataName: "IdEmpresa")
+                            @Html.CtrlInput(id: "txtIdRuta", type: "number", label: "Ruta", columnDataName: "IdRuta")
+                            @Html.CtrlInput(id: "txtIdChofer", type: "text", label: "Chofer", columnDataName: "IdChofer")
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

@@ -1,0 +1,59 @@
+﻿@using Web_App.Helpers;
+<script src="~/Scripts/views/vViajes.js"></script>
+@{ ViewBag.Title = "Viajes"; }
+
+@Html.Partial("_Chofer")
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+        <h1 class="h2">Viajes</h1>
+    </div>
+
+    <div class="card border-secondary" style="margin-top: 50px; margin-bottom: 50px">
+        <div class="card-header">
+            <div class="row pull-right">
+                <div class="col-md-4">
+                    @Html.CtrlButton(viewName: "vViajes", id: "btnAbordaje", label: "Abordaje", onClickFunction: "Abordaje", buttonType: "primary")
+                    @Html.CtrlButton(viewName: "vViajes", id: "btnStart", label: "En marcha", onClickFunction: "Start", buttonType: "success")
+                    @Html.CtrlButton(viewName: "vViajes", id: "btnEnd", label: "Finalizado", onClickFunction: "End", buttonType: "danger")
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Html.CtrlTable(viewName: "vViajes", id: "tblViaje", title: "Mi viaje en curso",
+                             columnsTitle: "Id,Ruta,Estado", ColumnsDataName: "IdViaje,NombreRuta,Estado",
+                             onSelectFunction: "BindFields", colorHeader: "white")
+
+
+    <div id ="frmEstudiantes" class="card border-secondary" style="margin-top: 50px; margin-bottom: 50px">
+        <div class="card-header">
+            <div class="row pull-right">
+                <div class="col-md-8">
+                    @Html.CtrlButton(viewName: "vViajes", id: "btnAgregar", label: "Agregar Estudiante", onClickFunction: "Add", buttonType: "success")
+                    @Html.CtrlButton(viewName: "vViajes", id: "btnRemover", label: "Remover Estudiante", onClickFunction: "Remove", buttonType: "danger")
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="bs-component">
+                        <form id="frmGestion">
+                            <select class="estudiantes form-control" id="estudiantes">
+                                <option selected disabled>Seleccione el estudiante</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="tblEstudianteswrapper">
+        @Html.CtrlTable(viewName: "vViajes", id: "tblEstudiantes", title: "Estudiantes a bordo",
+                                  columnsTitle: "Cédula, Nombre Estudiante, Apellido Estudiante", ColumnsDataName: "CedulaFisica,Nombre,Apellido",
+                                  onSelectFunction: "BindFields", colorHeader: "white")
+    </div>
+</main>

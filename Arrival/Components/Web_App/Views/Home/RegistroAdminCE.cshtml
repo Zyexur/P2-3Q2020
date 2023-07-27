@@ -1,0 +1,75 @@
+﻿
+@using Web_App.Helpers;
+<script src="~/Scripts/views/vRegistro.js"></script>
+@{
+    ViewBag.Title = "RegistroAdminCE";
+}
+
+<head>
+    <link href="~/Content/arrival.css" rel="stylesheet">
+</head>
+
+<div class="container">
+    @Html.Partial("Header")
+    <div class="py-5 text-center">
+        <h1 class="h2 mb-3 font-weight-lighter">Registrar usuario</h1>
+    </div>
+    <div class="d-flex justify-content-center">
+        <div class="col-md-8 order-md-1">
+            <form class="form-signin" id="registrationForm">
+                <div class="sub-heading">
+                    <h4 class="mb-3 font-weight-lighter underlined">Información del usuario</h4>
+                </div>
+                <div class="form-group">
+                    @Html.CtrlInput(id: "cedula", type: "number", label: "Numero de cedula", columnDataName: "CedulaFisica")
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        @Html.CtrlInput(id: "nombre", type: "text", label: "Nombre", columnDataName: "Nombre")
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        @Html.CtrlInput(id: "apellidos", type: "text", label: "Apellidos", columnDataName: "Apellido")
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    @Html.CtrlInput(id: "correo", type: "text", label: "Correo", columnDataName: "Correo")
+                </div>
+
+                <div class="mb-3">
+                    @Html.CtrlInput(id: "telefono", type: "number", label: "Telefono", columnDataName: "NumTelefono")
+
+                </div>
+
+                <div class="mb-3">
+                    @Html.CtrlInput(id: "fecha_nacimiento", type: "date", label: "Fecha de nacimiento", columnDataName: "FechaNacimiento")
+                </div>
+
+                @*<div class="mb-3"> @Html.CtrlInput(id: "ubicacion", type: "number", label: "Ubicacion (coordenadas)", columnDataName: "Coordenada") </div>*@
+
+                <input type="hidden" class="form-control" id="ubicacion" ColumnDataName="Coordenada" value="0">
+
+                <div class="mb-3">
+                    <label for="rol">Rol</label>
+                    <input type="text" class="form-control" id="rol" ColumnDataName="Rol" required value="Administrador Centro Educativo" disabled>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="r-CheckBox">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        He leído y acepto los <a href="#">Términos y Condiciones</a>
+                    </label>
+                </div>
+                <hr class="mb-4">
+                <div class="text-center form-group row login-submit">
+                    <div class="inicio"> @Html.CtrlButton(viewName: "vRegistro", id: "register_button", label: "Registrar", onClickFunction: "Registrar", buttonType: "primary")</div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <p class="mt-5 mb-3 text-muted text-center">&copy; 2020</p>
+</div>
+

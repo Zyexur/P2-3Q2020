@@ -1,0 +1,33 @@
+﻿html, body {
+}
+.termsContent{
+    width:70%;
+    
+}
+.termsForm {
+    padding: 10px;
+    margin: 10px;
+}
+.cardsContainer {
+    box-shadow: 1px 1px 5px #d9d9d9;
+    padding: 15px;
+    margin: 10px;
+}
+.cardHeading, descripcion {
+    margin: 10px;
+}
+.hidden {
+    display: none;
+}
+.btn{
+    font-size: 12px;
+}
+.configOptions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+.form-check-input{
+    position: absolute;
+}

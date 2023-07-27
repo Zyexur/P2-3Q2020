@@ -1,0 +1,102 @@
+﻿@using Web_App.Helpers;
+<script src="~/Scripts/views/vPerfilContrasennaUsuarios.js"></script>
+<link href="~/Content/arrival-home.css" rel="stylesheet">
+
+@{
+    ViewBag.Title = "PerfilChofer";
+}
+
+@Html.Partial("_Chofer")
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+        <h1 class="h2">Perfil</h1>
+    </div>
+
+    <ul class="nav nav-tabs">
+        <li class="nav-item"><a data-toggle="tab" class="nav-link" href="#perfil" onclick='vperfil()'>Perfil</a></li>
+        <li class="nav-item"><a data-toggle="tab" class="nav-link" href="#contrasenna" onclick='vperfil()'>Contraseña</a></li>
+    </ul>
+
+    <div class="tab-content">
+
+        <div id="perfil" class="tab-pane fade">
+            <div class="container">
+                <div class="d-flex justify-content-center">
+                    <div class="col-md-8 order-md-1">
+                        <form class="form-signin" id="updateForm">
+                            <div class="form-group">
+                                @Html.CtrlInput(id: "cedula_upd", type: "number", label: "Numero de cedula", columnDataName: "CedulaFisica")
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    @Html.CtrlInput(id: "nombre_upd", type: "text", label: "Nombre", columnDataName: "Nombre")
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    @Html.CtrlInput(id: "apellidos_upd", type: "text", label: "Apellidos", columnDataName: "Apellido")
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                @Html.CtrlInput(id: "correo_upd", type: "text", label: "Correo", columnDataName: "Correo")
+                            </div>
+
+                            <div class="mb-3">
+                                @Html.CtrlInput(id: "telefono_upd", type: "number", label: "Telefono", columnDataName: "NumTelefono")
+
+                            </div>
+
+                            <div class="mb-3">
+                                @Html.CtrlInput(id: "fecha_nacimiento_upd", type: "datetime-local", label: "Fecha de nacimiento", columnDataName: "FechaNacimiento")
+                            </div>
+
+                            <hr class="mb-4">
+
+                            <div class="text-center form-group row login-submit">
+                                <div class="inicio"> @Html.CtrlButton(viewName: "vPerfilContrasennaUsuarios", id: "update_button", label: "Modificar", onClickFunction: "ModificarPerfil", buttonType: "success")</div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="contrasenna" class="tab-pane fade">
+            <div class="container">
+                <div class="d-flex justify-content-center">
+                    <div class="col-md-8 order-md-1">
+                        <form class="form-signin" id="updateContrasennaForm">
+
+                            <div class="mb-3">
+                                @Html.CtrlInput(id: "contrasenna_upd", type: "password", label: "Contraseña", columnDataName: "Contrasenna")
+                            </div>
+
+                            <input type="checkbox" onclick="myFunction()">Mostrar Contraseña
+
+                            <hr class="mb-4">
+
+                            <div class="text-center form-group row login-submit">
+                                <div class="inicio"> @Html.CtrlButton(viewName: "vPerfilContrasennaUsuarios", id: "update_button_contrasenna", label: "Modificar", onClickFunction: "ModificarContrasenna", buttonType: "success")</div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("contrasenna_upd");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
+</main>
+

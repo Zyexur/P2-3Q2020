@@ -1,0 +1,43 @@
+﻿@using Web_App.Helpers;
+<script src="~/Scripts/views/vSolicitudesPariente.js"></script>
+@{ ViewBag.Title = "SolicitudesPariente"; }
+
+@Html.Partial("_Pariente")
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+        <h1 class="h2">Solicitudes de Registro en Centro Educativo</h1>
+    </div>
+
+    @Html.CtrlTable(viewName: "vSolicitudesPariente", id: "tblSolicitudes", title: "Lista de solicitudes",
+             columnsTitle: "Id,Fecha,Centro Educativo,Nombre Estudiante, Apellido Estudiante, Estado", ColumnsDataName: "IdSolicitud,FechaCreacion,NombreJuridico,Nombre,Apellido,Estado",
+             onSelectFunction: "BindFields", colorHeader: "white")
+
+
+    <div class="card border-secondary" style="margin-top: 50px;">
+        <div class="card-header">
+            <div class="row pull-right">
+                <div class="col-md-4">
+                    @Html.CtrlButton(viewName: "vSolicitudesPariente", id: "btnRegistrar", label: "Registrar", onClickFunction: "Register", buttonType: "success")
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="bs-component">
+                        <form id="frmGestion">
+                            <select class="school-dpd form-control" id="school-dpd">
+                                <option selected disabled>Seleccione el Centro Educativo</option>
+                            </select>
+                            <select class="estudiantes form-control" id="estudiantes">
+                                <option selected disabled>Seleccione el estudiante</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

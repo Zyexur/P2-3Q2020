@@ -1,0 +1,38 @@
+﻿@using Web_App.Helpers;
+
+@{
+    ViewBag.Title = "Registro";
+}
+
+<head>
+    <link href="~/Content/RegistroEstilo.css" rel="stylesheet">
+    <link href="~/Content/HeaderComp.css" rel="stylesheet" />
+    <link type="text/css" rel="stylesheet" href="~/Content/landing-page.css" />
+    <script src="https://kit.fontawesome.com/400c8448b9.js" crossorigin=""></script>
+</head>
+
+@Html.Partial("Header")
+
+<div class="outer-container">
+    <h2 class="main-heading">Seleccione el tipo de cuenta</h2>
+    <div class="options-container">
+        <div class="option" id="escuela">
+            <a href="https://localhost:44339/Home/RegistroAdminCE">
+                <i class="fas fa-school"></i>
+                <h2>Escolar</h2>
+            </a>
+        </div>
+        <div class="option" id="estudiante">
+            <a href="https://localhost:44339/Home/RegistroPariente">
+                <i class="fas fa-user-graduate"></i>
+                <h2>Familiar</h2>
+            </a>
+        </div>
+        <div class="option" id="transporte">
+            <a href="https://localhost:44339/Home/RegistroTransportista">
+                <i class="fas fa-bus-alt"></i>
+                <h2>Transporte</h2>
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+﻿
+.navBar {
+    padding: 1%;
+    width: 100%;
+}
+.brand-container {
+    display: flex;
+    justify-content: center;
+}
+.brand-container img {
+    width: 150px;
+}

@@ -1,0 +1,21 @@
+﻿body {
+}
+.container{
+    box-sizing:border-box;
+
+}
+
+.row{
+
+}
+.col {
+
+}
+.cards{
+    width: 50%;
+}
+
+.card{
+    margin: 10%;
+    box-shadow: 2px 2px 2px gray;
+}

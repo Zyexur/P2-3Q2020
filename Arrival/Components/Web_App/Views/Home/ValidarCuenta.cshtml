@@ -1,0 +1,31 @@
+﻿@using Web_App.Helpers;
+<script src="~/Scripts/views/vValidarCuenta.js"></script>
+@{
+    ViewBag.Title = "vValidarCuenta";
+}
+
+
+<head>
+    <link href="~/Content/inicio-sesion.css" rel="stylesheet">
+</head>
+
+<body class="text-center card-body pt-5">
+    <form class="form-signin" id="validationForm">
+        <img class="mb-4" src="~/Content/imgs/logo-blue.svg" alt="" width="250" height="150">
+
+        <h1 class="h3 mb-3 font-weight-lighter">Validar cuenta</h1>
+        <p>Ingrese su correo electrónico y el código que se le envió para validar su cuenta. </p>
+
+        <div class="form-group">
+            @Html.CtrlInput(id: "correo", type: "text", label: "", placeHolder: "Correo", columnDataName: "correo")
+        </div>
+        <div class="form-group">
+            @Html.CtrlInput(id: "codigo", type: "text", label: "", placeHolder: "Código", columnDataName: "codigo")
+        </div>
+        <div class="form-group row login-submit">
+            <div class="inicio"> @Html.CtrlButton(viewName: "vValidarCuenta", id: "validationButton", label: "Validar cuenta", onClickFunction: "ValidarCodigo", buttonType: "primary")</div>
+        </div>
+        <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
+    </form>
+</body>
+

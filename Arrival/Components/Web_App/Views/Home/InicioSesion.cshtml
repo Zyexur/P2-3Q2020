@@ -1,0 +1,47 @@
+﻿@using Web_App.Helpers;
+<script src="~/Scripts/views/vInicioSesion.js"></script>
+@{
+    ViewBag.Title = "InicioSesion";
+}
+
+<head>
+    <link href="~/Content/inicio-sesion.css" rel="stylesheet">
+</head>
+
+
+
+<ol class="breadcrumb page-head-nav">
+    <li class="breadcrumb-item">@Html.ActionLink("Arrival", "LandingPage", "Home")</li>
+</ol>
+
+
+
+<body class="text-center card-body pt-5">
+    <form class="form-signin" id="frm-inicio">
+        <img class="mb-4" src="~/Content/imgs/logo-blue.svg" alt="" width="250" height="150">
+
+        <h1 class="h3 mb-3 font-weight-normal">Iniciar sesión</h1>
+
+        <div class="form-group">
+            @Html.CtrlInput(id: "correo", type: "text", label: "", placeHolder: "Correo", columnDataName: "Correo")
+        </div>
+        <div class="form-group">
+            @Html.CtrlInput(id: "contrasenna", type: "password", label: "", placeHolder: "Contraseña", columnDataName: "Contrasenna")
+        </div>
+        <div class="form-group row login-tools">
+            @*<div class="col-6 login-remember"></div>*@
+            <div class="col-8 login-forgot-password">@Html.ActionLink("Olvidé mi contraseña", "RecuperarContrasenna", "Home")</div>
+        </div> 
+        <div class="form-group row login-submit">
+            @*<div class="col-6"> @Html.ActionLink("Registrar", "Index", "Home", new { @class = "transparent" })</div>*@
+            <div class="inicio"> @Html.CtrlButton(viewName: "vInicioSesion", id: "btnInicioSesion", label: "Iniciar sesión", onClickFunction: "IniciarSesion", buttonType: "primary")</div>
+        </div>
+        <div class="form-group row login-tools">
+            <p>¿Aún no tienes cuenta?</p>
+            @Html.ActionLink("Regístrate", "Registro", "Home")
+        </div>
+        <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
+    </form>
+</body>
+
+

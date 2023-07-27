@@ -1,0 +1,69 @@
+﻿@using Web_App.Helpers;
+<script src="~/Scripts/views/vRegistroUsuariosCeHome.js"></script>
+@{
+    ViewBag.Title = "RegistroChoferCeHome";
+}
+
+<head>
+    <link href="~/Content/arrival.css" rel="stylesheet">
+</head>
+
+@Html.Partial("_AdministradorCE")
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+        <h1 class="h2">Registrar Chofer</h1>
+    </div>
+
+    <div class="container">
+        <div class="d-flex justify-content-center">
+            <div class="col-md-8 order-md-1">
+                <h4 class="mb-3 font-weight-lighter">Información del usuario</h4>
+                <form class="form-signin" id="registrationForm">
+
+                    <div class="form-group">
+                        @Html.CtrlInput(id: "cedula", type: "number", label: "Numero de cedula", columnDataName: "CedulaFisica")
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            @Html.CtrlInput(id: "nombre", type: "text", label: "Nombre", columnDataName: "Nombre")
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            @Html.CtrlInput(id: "apellidos", type: "text", label: "Apellidos", columnDataName: "Apellido")
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        @Html.CtrlInput(id: "correo", type: "text", label: "Correo", columnDataName: "Correo")
+                    </div>
+
+                    <div class="mb-3">
+                        @Html.CtrlInput(id: "telefono", type: "number", label: "Telefono", columnDataName: "NumTelefono")
+
+                    </div>
+
+                    <div class="mb-3">
+                        @Html.CtrlInput(id: "fecha_nacimiento", type: "date", label: "Fecha de nacimiento", columnDataName: "FechaNacimiento")
+                    </div>
+
+                    <input type="hidden" class="form-control" id="ubicacion" ColumnDataName="Coordenada">
+
+                    <div class="mb-3">
+                        <label for="rol">Rol</label>
+                        <input type="text" class="form-control" id="rol" ColumnDataName="Rol" required value="Chofer" disabled>
+                    </div>
+
+                    <hr class="mb-4">
+
+                    <div class="text-center form-group row login-submit">
+                        <div class="inicio"> @Html.CtrlButton(viewName: "vRegistroChoferCeHome", id: "register_button", label: "Registrar", onClickFunction: "Registrar", buttonType: "primary")</div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</main>

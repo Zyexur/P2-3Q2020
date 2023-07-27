@@ -1,0 +1,46 @@
+﻿<script src="~/Scripts/views/vChofer.js"></script>
+
+<head>
+    <title>Chofer</title>
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet">
+    <link href="~/Content/main-page-chofer.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/400c8448b9.js" crossorigin=""></script>
+</head>
+
+
+<body>
+
+    <nav class="navbar navbar-dark sticky-top flex-md-nowrap p-0">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Arrival - Chofer</a>
+        <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">@Html.ActionLink("Cerrar Sesión", "InicioSesion", "Home", new { @class = "nav-link text-white" })</li>
+        </ul>
+    </nav>
+
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+
+        <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link text-muted" href="#">Administración</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Viajes", "Home")"><i class="fa fa-arrow-right"></i>    Viajes</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-muted" href="#">Configuraciones</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("PerfilChofer", "Home")"><i class="fas fa-user"></i>   Perfil</a>
+                </li>
+            </ul>
+
+        </div>
+
+    </nav>
+
+</body>

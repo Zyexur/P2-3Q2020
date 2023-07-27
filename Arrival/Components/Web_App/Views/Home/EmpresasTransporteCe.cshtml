@@ -1,0 +1,36 @@
+﻿@using Web_App.Helpers
+
+@{
+    ViewBag.Title = "EmpresasTransporteCe";
+}
+
+@Html.Partial("_AdministradorCE")
+
+<head>
+
+    <script src="~/Scripts/views/vEmpresaTransporteCE.js"></script>
+</head>
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+        <h1 class="h2">Transporte</h1>
+    </div>
+    <div class="row container">
+        <div class="col-6 left-box">
+            <div class="table-container">
+                @Html.CtrlTable(viewName: "vEmpresaTransporteCE", id: "tblSolicitudes", title: "Solicitudes",
+                columnsTitle: "Cédula Jurídica,Nombre", ColumnsDataName: "CedulaTR,NombreEmpresa",
+                onSelectFunction: "BindFields", colorHeader: "white")
+            </div>
+            <div class="table-btns">
+                @Html.CtrlButton(viewName: "vEmpresaTransporteCE", id: "btnAprobar", label: "Aprobar", buttonType: "success")
+                @Html.CtrlButton(viewName: "vEmpresaTransporteCE", id: "btnRechazar", label: "Rechazar", buttonType: "danger")
+            </div>
+        </div>
+        <div class="col-6">
+            @Html.CtrlTable(viewName: "vEmpresaTransporteCE", id: "tblEmpresasTransporte", title: "Empresas de transporte",
+            columnsTitle: "Cédula Jurídica,Nombre,Teléfono,Correo", ColumnsDataName: "CedulaJuridica,NombreJuridico,NumTelefono,Correo",
+            onSelectFunction: "BindFields", colorHeader: "white")
+        </div>
+    </div>
+</main>

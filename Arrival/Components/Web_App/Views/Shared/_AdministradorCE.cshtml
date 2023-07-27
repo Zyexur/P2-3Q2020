@@ -1,0 +1,89 @@
+﻿<script src="~/Scripts/views/vAdministradorCe.js"></script>
+<head>
+    <title>Administrador Centro Educativo</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet">
+    <link href="~/Content/main-page-admin-ce.css" rel="stylesheet">
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/400c8448b9.js" crossorigin=""></script>
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+    <!-- Promise polyfill script required to use Mapbox GL Geocoder in IE 11 -->
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css" type="text/css" />
+</head>
+
+
+<body>
+
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Arrival - Administrador Centro Educativo</a>
+        <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">@Html.ActionLink("Cerrar Sesión", "InicioSesion", "Home", new { @class = "nav-link text-white" })</li>
+        </ul>
+    </nav>
+
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+
+        <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link text-muted" href="#">Administración</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href=""><i class="fas fa-chart-pie"></i>    Dashboard</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("CentroEducativoAdminCe", "Home")"><i class="fas fa-school"></i>  Centro Educativo</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("SolicitudesAdminCE", "Home")"><i class="fas fa-envelope"></i>    Solicitudes</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("EmpresasTransporteCe", "Home" )"><i class="fas fa-bus-alt"></i>    Transporte</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("UsuariosAdminCe", "Home")"><i class="fas fa-user-friends"></i>    Usuarios</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("NivelSeccion", "Home")"><i class="fas fa-chalkboard-teacher"></i>   Niveles y Secciones</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("RutasAdminCe", "Home")"><i class="fas fa-route"></i>  Rutas</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("EventosAdminCe", "Home")"><i class="fas fa-map-marker"></i>   Eventos</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-muted" href="#">Configuraciones</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("PerfilAdminCe", "Home")"><i class="fas fa-user-circle"></i>    Perfil</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-muted" href="#">Histórico</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href=""><i class="fas fa-clipboard"></i>   Bitácora</a>
+                </li>
+            </ul>
+
+        </div>
+
+    </nav>
+
+</body>

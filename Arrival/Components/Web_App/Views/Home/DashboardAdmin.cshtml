@@ -1,0 +1,45 @@
+﻿@using Web_App.Helpers;
+
+@{
+    ViewBag.Title = "DashboardAdmin";
+}
+
+
+@Html.Partial("_Administrador")
+<head>
+    <link type="text/css" rel="stylesheet" href="~/Content/DashboardAdmin.css" />
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+</head>
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="cards">
+                        @Html.CtrlCard(viewName: "vDashboardAdmin", id: "totalUsuarios", label: "Total usuarios", valor: 25000)
+                        @Html.CtrlCard(viewName: "vDashboardAdmin", id: "usuariosActivos", label: "Usuarios activos", valor: 21000)
+                        @Html.CtrlCard(viewName: "vDashboardAdmin", id: "usuariosInactivos", label: "Usuarios inactivos", valor: 4000)
+                    </div>
+                </div>
+                <div class="col">
+                    @Html.CtrlPieChart(viewName: "vDashboardAdmin", id: "usersPieChart")
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    @Html.CtrlLineChart(viewName: "vDashboardAdmin", id: "profitsLineChart")
+                </div>
+                <div class="col">
+                    <div class="cards">
+                        @Html.CtrlCard(viewName: "vDashboardG", id: "gananciaTotal", label: "Ganancia total", valor: 25000)
+                        @Html.CtrlCard(viewName: "vDashboardG", id: "gananciaEstudiantes", label: "Ingreso por cuenta Estudiante", valor: 21000)
+                        @Html.CtrlCard(viewName: "vDashboardG", id: "gananciaCE", label: "Ingreso por cuenta Centro Educativo", valor: 4000)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+

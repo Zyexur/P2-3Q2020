@@ -1,0 +1,38 @@
+﻿@using Web_App.Helpers;
+@{
+    ViewBag.Title = "CentrosEducativosTR";
+}
+
+@Html.Partial("TransportistaPanel")
+
+<head>
+    <link rel="stylesheet" type="text/css" href="#" />
+    <script src="~/Scripts/views/vCentrosEducativosTR.js"></script>
+</head>
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+        <h1 class="h2">Centros Educativos</h1>
+    </div>
+
+    <div class="row container">
+        <div class="col-6 left-box">
+            <select class="school-dpd form-control" id="school-dpd">
+                <option selected disabled>Seleccione</option>
+            </select>
+            <div>
+                <hr />
+            </div>
+            <div class="sendBtn">
+                <button type="button" id= "sendReq" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Enviar</button>
+            </div>
+        </div>
+        <div class="col-6">
+            @Html.CtrlTable(viewName: "vCentrosEducativosTR", id: "tblCentrosAsociados", title: "Centros Educativos Asociados",
+        columnsTitle: "Cédula Jurídica,Nombre,Telefono,Correo", ColumnsDataName: "CedulaJuridica,NombreJuridico,NumTelefono,Correo",
+        onSelectFunction: "BindFields", colorHeader: "white")
+        </div>
+    </div>
+</main>
+

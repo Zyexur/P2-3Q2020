@@ -1,0 +1,154 @@
+﻿html, body{
+    height: 100%;
+    min-height: 100%;
+}
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container {
+    max-width: none;
+}
+
+.row, .col, .body-content {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.header{
+
+    background-image: url("imgs/school.jpg");
+    background-position:center;
+    background-size: cover;
+}
+.headerTxt {
+    display: flex;
+    flex-direction: column;
+    padding-top: 25%;
+    padding-bottom: 15%;
+    color: white;
+    text-align: end;
+    margin-right: 5%;
+}
+.headerTxt h1, .headerTxt h3{
+    display: inline;
+}
+.headerTxt h1{
+    font-size: 4rem;
+    text-shadow: 1px 1px 3px black;
+}
+.headerTxt h3 {
+    background-color: #0099cc;
+    padding: 0.5%;
+    border-radius: 5px;
+}
+
+.headerTxt a {
+    color: white;
+    text-decoration: none;
+}
+.headingBtn{
+    margin-top: 10px;
+}
+
+.navbar {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 1%;
+    width: 100%;
+}
+#navbarNav{
+    justify-content: flex-end;
+}
+.nav-left{
+    padding-right:  10%;
+}
+.nav-left li {
+    margin: 10px;
+}
+.nav-left a {
+    color: #4d4d4d;
+}
+.nav-right li {
+    background-color: #0099cc;
+    border-radius: 5px;
+    margin: 5px;
+}
+.nav-right a {
+    color: white;
+}
+.marketing {
+
+}
+.featurette{
+
+}
+.row{
+
+}
+.col-lg-4{
+
+    text-align: center;
+}
+.about{
+    padding: 6% 0;
+    width: 65%;
+    text-align:center;
+    margin: auto;
+}
+.heading{
+    padding: 1% 0;
+    text-align: center;
+    display: block;
+    width: 100%;
+}
+.featurette p{
+    width: 90%;
+}
+
+.footer {
+    background-color: #333333;
+    color: white;
+    text-align: center;
+    margin: 0 0 -10% 0;
+}
+.float-end {
+    float: right;
+    margin-right: 2%;
+    margin-top: 5%;
+    color: #0086b3;
+    border: 2px solid #0086b3;
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+}
+.float-end a {
+    color: #0086b3;
+    text-decoration: none;
+}
+.socialMedia-box {
+    background-color: #4d4d4d;
+    color: white;
+    text-align: center;
+    padding: 2% 0;
+    margin-top: 10%;
+}
+.socialMedia{
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    margin: auto;
+    justify-content: center
+}
+.fab{
+    color: white;
+    font-size: 2rem;
+    margin: 10px;
+}
+    .fab:hover {
+        color: #0099cc;
+    }
+.bottomTxt{
+    text-align: center;
+}

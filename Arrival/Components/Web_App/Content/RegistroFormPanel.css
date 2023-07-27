@@ -1,0 +1,16 @@
+﻿body {
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.col-md-4{
+    margin: 1%;
+}
+.submitBtn, .checkbox {
+    padding-top: 4%;
+}
+

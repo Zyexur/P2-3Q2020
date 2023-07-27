@@ -1,0 +1,29 @@
+﻿<script type="text/javascript">
+
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(drawLineChart);
+    google.charts.setOnLoadCallback(drawPieChart);
+
+    function drawLineChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Mes', 'Ganancias'],
+            ['2004', 1000],
+            ['2005', 1170],
+            ['2006', 660],
+            ['2007', 1030]
+        ]);
+
+        var options = {
+            title: 'Company Performance',
+            curveType: 'function',
+            legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('profitsLineChart'));
+        chart.draw(data, options);
+    }
+</script>
+
+<div class="charts" id="profitsLineChart">
+    <div id="profitsLineChart" style="width: 600px; height: 400px"></div>
+</div>

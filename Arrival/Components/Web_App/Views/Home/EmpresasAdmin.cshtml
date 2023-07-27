@@ -1,0 +1,25 @@
+﻿@using Web_App.Helpers;
+<script src="~/Scripts/views/vEmpresasAdmin.js"></script>
+
+@{
+    ViewBag.Title = "EmpresasAdmin";
+}
+
+@Html.Partial("_Administrador")
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+        <h1 class="h2">Empresas</h1>
+    </div>
+
+    <div class="flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+
+    </div>
+
+
+    @Html.CtrlTable(viewName: "vEmpresasAdmin", id: "tblEmpresasAdmin", title: "Lista de empresas",
+    columnsTitle: "Cédula Jurídica,Nombre Jurídico,Correo,Teléfono,Tipo de Empresa,Estado", ColumnsDataName: "CedulaJuridica,NombreJuridico,Correo,NumTelefono,Tipo,Estado",
+    onSelectFunction: "BindFields", colorHeader: "white")
+
+</main>

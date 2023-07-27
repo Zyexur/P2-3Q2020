@@ -1,0 +1,46 @@
+﻿@using Web_App.Helpers;
+<script src="~/Scripts/views/vMembresiasAdmin.js"></script>
+@{
+    ViewBag.Title = "MembresiasAdmin";
+}
+
+@Html.Partial("_Administrador")
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+        <h1 class="h2">Membresía</h1>
+    </div>
+
+    @Html.CtrlTable(viewName: "vMembresiasAdmin", id: "tblMembresias", title: "Lista de membresías",
+    columnsTitle: "Id,Tipo,Periodicidad (Días),Monto (Colones)", ColumnsDataName: "IdMembresia,Nombre,Periodicidad,Monto",
+    onSelectFunction: "BindFields", colorHeader: "white")
+
+    <div class="card border-secondary" style="margin-top: 50px;">
+        <div class="card-header">
+            <div class="row pull-right">
+                <div class="col-md-8">Membresía</div>
+                <div class="flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+                    @Html.CtrlButton(viewName: "vMembresiasAdmin", id: "btnCrMembresia", label: "Registrar", onClickFunction: "Create", buttonType: "primary")
+                    @Html.CtrlButton(viewName: "vMembresiasAdmin", id: "btnUpdMembresia", label: "Modificar", onClickFunction: "Update", buttonType: "success")
+                    @Html.CtrlButton(viewName: "vMembresiasAdmin", id: "btnDelMembresia", label: "Eliminar", onClickFunction: "Delete", buttonType: "danger")
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="bs-component">
+                        <form id="frmEdition">
+                            @Html.CtrlInput(id: "txtId", type: "number", label: "Id", columnDataName: "IdMembresia")
+                            @Html.CtrlInput(id: "txtTipo", type: "text", label: "Tipo", columnDataName: "Nombre")
+                            @Html.CtrlInput(id: "txtPeriodicidad", type: "number", label: "Periodicidad (Días)", columnDataName: "Periodicidad")
+                            @Html.CtrlInput(id: "txtMonto", type: "number", label: "Monto (Colones)", columnDataName: "Monto")
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>

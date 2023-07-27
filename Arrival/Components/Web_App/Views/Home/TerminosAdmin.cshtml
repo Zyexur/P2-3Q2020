@@ -1,0 +1,70 @@
+﻿@using Web_App.Helpers;
+<link type="text/css" href="~/Content/terminos.css" rel="stylesheet" />
+@{
+    ViewBag.Title = "TerminosAdmin";
+}
+
+@Html.Partial("_Administrador")
+<head>
+    <link type="text/css" rel="stylesheet" href="~/Content/StyleSheet1.css">
+    <script src="~/Scripts/views/vTerminosAdmin.js"></script>
+</head>
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+        <h1 class="h2">Términos y condiciones</h1>
+    </div>
+    <div class="termsContent">
+        <div class="configOptions">
+            <div class="leftBtns">
+                <button type="button" class="btn btn-success" id="addbtn">Agregar</button>
+            </div>
+            <div class="rightBtns">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Modificar</button>
+                <button type="button" class="btn btn-danger" id="delBtn">Eliminar</button>
+            </div>
+        </div>
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="modifyForm">
+                            <div class="mb-3">
+                                <label for="apartado" class="form-label">Apartado</label>
+                                <input type="text" class="form-control" id="m-titulo" placeholder="Titulo del apartado">
+                            </div>
+                            <div class="mb-3">
+                                <label for="descripcion" class="form-label">Descripción</label>
+                                <textarea class="form-control" rows="3" id="m-descripcion"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="saveMod" data-dismiss="modal">Save changes</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="termsForm hidden">
+            <div class="mb-3">
+                <label for="apartado" class="form-label">Apartado</label>
+                <input type="text" class="form-control" id="r-titulo" placeholder="Titulo del apartado">
+            </div>
+            <div class="mb-3">
+                <label for="descripcion" class="form-label">Descripción</label>
+                <textarea class="form-control" id="r-descripcion" rows="3"></textarea>
+            </div>
+            @Html.CtrlButton(viewName: "vTerminosAdmin", id: "btnSave", label: "Guardar", onClickFunction: "RegistrarTerminos", buttonType: "success")
+        </div>
+
+        <div class="termsList" id="termsList"></div>
+    </div>
+</main>

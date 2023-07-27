@@ -1,0 +1,89 @@
+﻿@using Web_App.Helpers;
+
+<script src="~/Scripts/views/vEventosAdminCe.js"></script>
+
+@{
+    ViewBag.Title = "EventosAdminCe";
+}
+
+@Html.Partial("_AdministradorCE")
+
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+        <h1 class="h2">Eventos Centro Educativo</h1>
+    </div>
+
+    @Html.CtrlTable(viewName: "vEventosAdminCe", id: "tblEventosAdminCe", title: "Lista de eventos",
+    columnsTitle: "Id,Nombre,Descripcion,Ubicación", ColumnsDataName: "IdActividad,Nombre,Desc,CoorFinal",
+    onSelectFunction: "BindFields", colorHeader: "white")
+
+    <div class="card border-secondary" style="margin-top: 50px;">
+        <div class="card-header">
+            <div class="row pull-right">
+                <div class="col-md-8">Evento</div>
+                <div class="flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+                    @Html.CtrlButton(viewName: "vEventosAdminCe", id: "btnCrEvento", label: "Registrar", onClickFunction: "Create", buttonType: "primary")
+                    @Html.CtrlButton(viewName: "vEventosAdminCe", id: "btnUpdEvento", label: "Modificar", onClickFunction: "Update", buttonType: "success")
+                    @*@Html.CtrlButton(viewName: "vEventosAdminCe", id: "btnDelMembresia", label: "Eliminar", onClickFunction: "Delete", buttonType: "danger")*@
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="bs-component">
+                        <form id="frmEdition">
+                            @Html.CtrlInput(id: "txtId", type: "number", label: "Id", columnDataName: "IdActividad")
+                            @Html.CtrlInput(id: "txtNombre", type: "text", label: "Nombre Evento", columnDataName: "Nombre")
+                            @Html.CtrlInput(id: "txtDesc", type: "text", label: "Descripción Evento", columnDataName: "Desc")
+                            @Html.CtrlInput(id: "txtCoorFinal", type: "text", label: "Ubicación", columnDataName: "CoorFinal")
+                            <select class="school-dpd form-control" id="tr-dpd">
+                                <option selected disabled>Transportista</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="bs-component">
+                        <div id="map" style='height: 40vh;' ;></div>
+                        <pre id="coordinates" class="coordinates"></pre>
+                    </div>
+                    @*<div class="bs-component" id='map' style='height: 40vh;' ;></div>*@
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card border-secondary" style="margin-top: 50px;">
+        <div class="card-header">
+            <div class="row pull-right">
+                <div class="col-md-8">Asociar</div>
+                <div class="flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+                    @Html.CtrlButton(viewName: "vEventosAdminCe", id: "btnAscEvento", label: "Asociar", onClickFunction: "Asociate", buttonType: "danger")
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="bs-component">
+                        <form id="frmAsociate">
+                            @Html.CtrlInput(id: "txtIdAsc", type: "number", label: "Id", columnDataName: "IdActividad")
+                            @Html.CtrlInput(id: "txtNombreAsc", type: "text", label: "Nombre Evento", columnDataName: "Nombre")
+                            @*@Html.CtrlDropDown(id: "", label: "Cedula Estudiantes", listId: "LST_EST", ColumnDataName: "")*@
+                            @*<div class="form-group">
+                                <input type="text" class="form-control" id="txtEstAsc" ColumnDataName="Estudiante" value="280087832">
+                            </div>*@
+                            <select class="school-dpd form-control" id="est-dpd">
+                                <option selected disabled>Estudiante</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>

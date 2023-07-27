@@ -1,0 +1,57 @@
+﻿<script src="~/Scripts/views/vPariente.js"></script>
+<head>
+    <title>Pariente</title>
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet">
+    <link href="~/Content/main-page-pariente.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/400c8448b9.js" crossorigin=""></script>
+</head>
+
+
+<body>
+
+    <nav class="navbar navbar-dark sticky-top bg-success flex-md-nowrap p-0">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Arrival - Pariente</a>
+        <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">@Html.ActionLink("Cerrar Sesión", "InicioSesion", "Home", new { @class = "nav-link text-white" })</li>
+        </ul>
+    </nav>
+
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+
+        <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+                <li class="nav-item"> 
+                    <a class="nav-link text-muted" href="#">Administración</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("EstudiantesPariente", "Home")"><i class="fas fa-user-friends"></i>    Estudiantes</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("SolicitudesPariente", "Home")"><i class="fas fa-envelope"></i>    Solicitudes</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-muted" href="#">Configuraciones</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("PerfilPariente", "Home")"><i class="fas fa-user-circle"></i>    Perfil</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-muted" href="#">Histórico</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href=""><i class="fas fa-clipboard"></i>   Bitácora</a>
+                </li>
+            </ul>
+
+        </div>
+
+    </nav>
+
+</body>

@@ -1,0 +1,50 @@
+﻿@using Web_App.Helpers;
+<script src="~/Scripts/views/vEstudiantesPariente.js"></script>
+@{ ViewBag.Title = "EstudiantesPariente"; }
+
+@Html.Partial("_Pariente")
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+        <h1 class="h2">Estudiantes</h1>
+    </div>
+
+    @Html.CtrlTable(viewName: "vEstudiantesPariente", id: "tblEstudiantesPariente", title: "Mis estudiantes",
+                columnsTitle: "Cédula,Nombre,Apellido,Correo,Teléfono,Fecha de Nacimiento,Coordenadas,Estado", ColumnsDataName: "CedulaFisica,Nombre,Apellido,Correo,NumTelefono,FechaNacimiento,Coordenada,EstadoUsuario",
+                onSelectFunction: "BindFields", colorHeader: "white")
+
+    <div class="card border-secondary" style="margin-top: 50px;">
+        <div class="card-header">
+            <div class="row pull-right">
+
+                <div class="col-md-4">
+                    @Html.CtrlButton(viewName: "vEstudiantesPariente", id: "btnRegister", label: "Registrar", onClickFunction: "Register", buttonType: "success")
+                    <!--@Html.CtrlButton(viewName: "vEstudiantesPariente", id: "btnUpdate", label: "Modificar", onClickFunction: "Update", buttonType: "primary")-->
+                    <!--@Html.CtrlButton(viewName: "vEstudiantesPariente", id: "btnDelete", label: "Eliminar", onClickFunction: "Delete", buttonType: "danger")-->
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="bs-component">
+                        <form id="frmGestion">
+                            @Html.CtrlInput(id: "txtId", type: "text", label: "Cédula", columnDataName: "CedulaFisica")
+                            @Html.CtrlInput(id: "txtNombre", type: "text", label: "Nombre", columnDataName: "Nombre")
+                            @Html.CtrlInput(id: "txtApellido", type: "text", label: "Apellido", columnDataName: "Apellido")
+                            @Html.CtrlInput(id: "txtCorreo", type: "text", label: "Correo", columnDataName: "Correo")
+                            @Html.CtrlInput(id: "txtNumTelefono", type: "text", label: "Teléfono", columnDataName: "NumTelefono")
+                            @Html.CtrlInput(id: "txtFechaNacimiento", type: "text", label: "Fecha de Nacimiento", columnDataName: "FechaNacimiento")
+                            @Html.CtrlInput(id: "txtCoordenada", type: "text", label: "Coordenadas", columnDataName: "Coordenada")
+                            @Html.CtrlInput(id: "txtEstado", type: "text", label: "Estado", columnDataName: "EstadoUsuario")
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</main>

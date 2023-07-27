@@ -1,0 +1,22 @@
+﻿@using Web_App.Helpers;
+<script src="~/Scripts/views/vBitacora.js"></script>
+@{
+    ViewBag.Title = "BitacoraAdmin";
+}
+
+@Html.Partial("_Administrador")
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+        <h1 class="h2">Bitácora</h1>
+    </div>
+
+    @Html.CtrlTable(viewName: "vBitacora", id: "tblBitacora", title: "Lista de bitácoras",
+    columnsTitle: "Id,Fecha,Accion,Cedula Usuario", ColumnsDataName: "IdActividad,Fecha,Accion,CedulaFisica",
+    onSelectFunction: "BindFields", colorHeader: "white")
+
+
+
+</main>
+

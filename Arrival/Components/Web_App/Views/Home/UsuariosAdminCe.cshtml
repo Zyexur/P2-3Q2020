@@ -1,0 +1,34 @@
+﻿@using Web_App.Helpers;
+<script src="~/Scripts/views/vUsuariosAdminCe.js"></script>
+@{
+    ViewBag.Title = "UsuariosAdminCe";
+}
+
+@Html.Partial("_AdministradorCE")
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+        <h1 class="h2">Usuarios Centro Educativo</h1>
+    </div>
+
+    <div class="row pull-right">
+        <div class="col-md-8">Registro de usuarios</div>
+        <div class="flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <a type="button" class="btn btn-dark" href="@Url.Action("RegistroAdminCeHome", "Home")">Administrador</a>
+        </div>
+    </div>
+
+    @Html.CtrlTable(viewName: "vUsuariosAdminCe", id: "tblUsuariosCe", title: "Lista de usuarios",
+    columnsTitle: "Cedula,Nombre,Apellido,Correo,Teléfono,Fecha de nacimiento,Estado,Rol", ColumnsDataName: "CedulaFisica,Nombre,Apellido,Correo,NumTelefono,FechaNacimiento,EstadoUsuario,Rol",
+    onSelectFunction: "BindFields", colorHeader: "white")
+
+
+
+
+    @*@Html.CtrlTable(viewName: "vRutasAdminCe", id: "tblRutasAdminCe", title: "Lista de usuarios",
+        columnsTitle: "Cedula,Nombre,Apellido,Correo,Teléfono,Fecha de nacimiento,Estado,Rol", ColumnsDataName: "CedulaFisica,Nombre,Apellido,Correo,NumTelefono,FechaNacimiento,EstadoUsuario,Rol",
+        onSelectFunction: "BindFields", colorHeader: "white")*@
+
+</main>
+

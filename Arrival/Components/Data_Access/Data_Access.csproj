@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F2C56110-8B99-4985-97A6-80C1F58EAB25}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Data_Access</RootNamespace>
+    <AssemblyName>Data_Access</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Crud\ActividadEspecialCrudFactory.cs" />
+    <Compile Include="Crud\ApplicationMessageCrudFactory.cs" />
+    <Compile Include="Crud\CentroEduNivelCrudFactory.cs" />
+    <Compile Include="Crud\SolicitudTR_CECrud.cs" />
+    <Compile Include="Crud\NivelesSeccionesCrudFactory.cs" />
+    <Compile Include="Crud\PagoCrudFactory.cs" />
+    <Compile Include="Crud\CrudFactory.cs" />
+    <Compile Include="Crud\EmpresaCrudFactory.cs" />
+    <Compile Include="Crud\ListOptionCrudFactory.cs" />
+    <Compile Include="Crud\MembresiaCrudFactory.cs" />
+    <Compile Include="Crud\NivelCrudFactory.cs" />
+    <Compile Include="Crud\NivelSeccionCrudFactory.cs" />
+    <Compile Include="Crud\SeccionCrudFactory.cs" />
+    <Compile Include="Crud\RutaCrudFactory.cs" />
+    <Compile Include="Crud\SolicitudEmpresaCrudFactory.cs" />
+    <Compile Include="Crud\SolicitudEstudianteCrudFactory.cs" />
+    <Compile Include="Crud\UnidadCrudFactory.cs" />
+    <Compile Include="Crud\UsuarioCrudFactory.cs" />
+    <Compile Include="Crud\BitacoraCrudFactory.cs" />
+    <Compile Include="Crud\TerminosCrudFactory.cs" />
+    <Compile Include="Crud\PerfilCrudFactory.cs" />
+    <Compile Include="Crud\ViajeCrudFactory.cs" />
+    <Compile Include="Dao\SqlDao.cs" />
+    <Compile Include="Dao\SqlOperation.cs" />
+    <Compile Include="Mapper\ActividadEspecialMapper.cs" />
+    <Compile Include="Mapper\CentroEducativoNivelMapper.cs" />
+    <Compile Include="Mapper\SolicitudesTR_CEMapper.cs" />
+    <Compile Include="Mapper\NivelesSeccionesMapper.cs" />
+    <Compile Include="Mapper\PagoMapper.cs" />
+    <Compile Include="Mapper\EmpresaMapper.cs" />
+    <Compile Include="Mapper\EntityMapper.cs" />
+    <Compile Include="Mapper\IObjectMapper.cs" />
+    <Compile Include="Mapper\ISqlStatements.cs" />
+    <Compile Include="Mapper\ListOptionMapper.cs" />
+    <Compile Include="Mapper\ApplicationMessageMapper.cs" />
+    <Compile Include="Mapper\MembresiaMapper.cs" />
+    <Compile Include="Mapper\BitacoraMapper.cs" />
+    <Compile Include="Mapper\NivelMapper.cs" />
+    <Compile Include="Mapper\NivelSeccionMapper.cs" />
+    <Compile Include="Mapper\SeccionMapper.cs" />
+    <Compile Include="Mapper\RutaMapper.cs" />
+    <Compile Include="Mapper\SolicitudEmpresaMapper.cs" />
+    <Compile Include="Mapper\SolicitudEstudianteMapper.cs" />
+    <Compile Include="Mapper\UnidadMapper.cs" />
+    <Compile Include="Mapper\UsuarioMapper.cs" />
+    <Compile Include="Mapper\TerminosMapper.cs" />
+    <Compile Include="Mapper\PerfilMapper.cs" />
+    <Compile Include="Mapper\ViajeMapper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{4C93EB26-14B0-494D-984F-664B9A17E110}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,32 @@
+﻿@using Web_App.Helpers;
+<script src="~/Scripts/views/vContrasenna.js"></script>
+
+@{
+    ViewBag.Title = "RecuperarContrasenna";
+}
+
+<head>
+    <link href="~/Content/inicio-sesion.css" rel="stylesheet">
+</head>
+
+<ol class="breadcrumb page-head-nav">
+    <li class="breadcrumb-item">@Html.ActionLink("Arrival", "LandingPage", "Home")</li>
+    <li class="breadcrumb-item">@Html.ActionLink("Iniciar sesión", "InicioSesion", "Home")</li>
+</ol>
+
+<body class="text-center card-body pt-5">
+    <form class="form-signin" id="frm-recupera-contrasenna">
+        <img class="mb-4" src="~/Content/imgs/logo-blue.svg" alt="" width="250" height="150">
+
+        <h1 class="h3 mb-3 font-weight-lighter">¿Olvidó su contraseña?</h1>
+        <p>No se preocupe le enviaremos un correo electrónico con su contraseña de vuelta. </p>
+
+        <div class="form-group">
+            @Html.CtrlInput(id: "correo", type: "text", label: "", placeHolder: "Correo", columnDataName: "Correo")
+        </div>
+        <div class="form-group row login-submit">
+            <div class="inicio"> @Html.CtrlButton(viewName: "vContrasenna", id: "btnRecuperaContrasenna", label: "Recuperar contraseña", onClickFunction: "Retrieve", buttonType: "primary")</div>
+        </div>
+        <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
+    </form>
+</body>
